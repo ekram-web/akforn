@@ -131,7 +131,7 @@ const About = () => {
               <div className={styles.processNumber}>01</div>
               <h3>Our Vision</h3>
               <p>
-                To be the global leader in security, creating a safer world
+                 To be the global leader in security, creating a safer world
                 through continuous innovation.
               </p>
             </AnimateOnScroll>
