@@ -1,0 +1,49 @@
+/* This CSS is scoped ONLY to Navbar.jsx */
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 40px; /* Padding on the left and right */
+  height: 80px;
+}
+
+.container {
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto; /* Center the container */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 800;
+  color: #111827;
+  text-decoration: none;
+}
+
+.navLinks {
+  display: flex;
+  gap: 32px; /* Space between links */
+  font-weight: 500;
+  font-size: 1rem; /* 16px */
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #ae3f3d;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #ae3f3d; /* Hikvision's brand blue */
+  border-bottom-color: #ae3f3dac;
+}
+
+.navActions {
+  /* Placeholder for icons */
+  font-weight: 500;
+}

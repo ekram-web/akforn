@@ -1,0 +1,275 @@
+.firmwarePageContainer {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.firmwareMainContent {
+  flex: 3;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.firmwareHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.firmwareTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.searchSection {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.searchInput {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.searchButton {
+  background-color: #e62129;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.searchIcon {
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+
+.firmwareList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.firmwareItem {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.firmwareItem:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.firmwareItemId {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+
+.firmwareItemId:hover {
+  background-color: #f5f5f5;
+}
+
+.toggleIcon {
+  width: 20px;
+  height: 20px;
+  color: #e62129;
+  transition: transform 0.3s ease-in-out;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.toggleIcon.expanded {
+  transform: rotate(45deg);
+}
+
+.firmwareVersions {
+  margin-top: 10px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  max-height: 1000px;
+}
+
+.firmwareVersions.collapsed {
+  max-height: 0;
+  margin-top: 0;
+}
+
+.firmwareVersionItem {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.firmwareVersionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.firmwareVersionLabel {
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #e62129;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.downloadButton:hover {
+  background-color: #d11920;
+}
+
+.downloadIcon {
+  font-size: 16px;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .firmwarePageContainer {
+    flex-direction: column;
+  }
+
+  .firmwareHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .searchSection {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .firmwareSidebar {
+    margin-top: 20px;
+  }
+}
+
+.firmwareVersionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.firmwareVersionMeta {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.firmwareVersionName {
+  font-size: 1.1em;
+  color: #007bff;
+  font-weight: 600;
+  margin: 0;
+}
+
+.firmwareVersionInfo {
+  font-size: 0.9em;
+  color: #777;
+  margin-left: 10px;
+}
+
+.firmwareAppliedTo {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 10px;
+}
+
+.firmwareAppliedTo span {
+  font-weight: bold;
+}
+
+.noFirmware {
+  font-style: italic;
+  color: #888;
+}
+
+.noResults {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.noResults p {
+  font-size: 18px;
+  color: #495057;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.noResultsSubtext {
+  font-size: 14px !important;
+  color: #6c757d !important;
+  font-weight: 400 !important;
+  margin-bottom: 0 !important;
+}
+
+
+
+.firmwareTitle {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.firmwareSection {
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 1.8em;
+  color: #555;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}

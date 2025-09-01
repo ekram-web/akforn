@@ -1,0 +1,91 @@
+.featuredSection {
+  padding: 6rem 0;
+  background-color: #f9fafb;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.navButtons { display: flex; gap: 1rem; }
+.navButtons button {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid #e5e7eb; background: white;
+  cursor: pointer; font-size: 1.5rem; color: #374151;
+  transition: all 0.2s ease;
+}
+.navButtons button:hover {
+  background-color: var(--color-primary); color: white;
+  border-color: var(--color-primary);
+}
+
+.scrollContainer {
+  display: flex; gap: 2rem; overflow-x: auto;
+  padding-bottom: 1rem; scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.scrollContainer::-webkit-scrollbar { display: none; }
+
+/* --- THE CARD with the EXACT SIZE YOU LIKED --- */
+.card {
+  flex: 0 0 350px; height: 450px;
+  position: relative; border-radius: 16px;
+  overflow: hidden; scroll-snap-align: start;
+  transform-style: preserve-3d; /* Required for tilt effect */
+  background-color: #111;
+}
+
+.imageWrapper { width: 100%; height: 100%; }
+.imageWrapper img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.gradientOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+}
+
+.titleBar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 1.5rem; z-index: 2; transition: opacity 0.4s ease;
+}
+.card:hover .titleBar { opacity: 0; }
+.titleBar h3 {
+  color: white; font-size: 1.5rem; font-weight: 700; margin: 0;
+  transform: translateZ(20px); /* Makes title pop out in 3D */
+}
+
+/* --- THE UNIQUE HOVER PANEL --- */
+.hoverPanel {
+  position: absolute; inset: 0; z-index: 3; padding: 1.5rem;
+  background-color: rgba(174, 63, 61, 0.95); /* Your brand red */
+  color: white;
+  opacity: 0; transform: translateY(100%);
+  transition: all 0.4s ease;
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.card:hover .hoverPanel { opacity: 1; transform: translateY(0); }
+.hoverPanel h4 {
+  font-size: 1.5rem; font-weight: 700; margin: 0 0 0.5rem;
+  transform: translateZ(50px); /* Makes text pop out even more */
+}
+.hoverPanel p {
+  margin: 0 0 1rem; line-height: 1.5; flex-grow: 1;
+  transform: translateZ(40px);
+}
+.hoverPanel a {
+  color: white; font-weight: 600; text-decoration: none;
+  transform: translateZ(30px);
+}
+.hoverPanel a span { display: inline-block; transition: transform 0.3s ease; }
+.hoverPanel a:hover span { transform: translateX(5px); }

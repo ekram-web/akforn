@@ -1,0 +1,166 @@
+.pageContainer {
+  padding: 40px 0;
+  background-color: #f9fafb;
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.searchBar {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.searchBar input {
+  flex-grow: 1;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+.searchBar button {
+  border: none;
+  background-color: #e4002b; /* Hikvision Red */
+  color: white;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.filterSection {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.categoryLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-right: 20px;
+}
+
+.categoryList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 25px;
+}
+.categoryList button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+}
+.categoryList button.active {
+  color: #e4002b;
+  border-bottom-color: #e4002b;
+}
+
+.guidesList {
+  background-color: white;
+  padding: 0 30px;
+  border: 1px solid #e5e7eb;
+}
+
+/* --- Accordion Styles (Now inside this file) --- */
+
+.accordionItem {
+  border-bottom: 1px solid #e5e7eb;
+}
+.accordionItem:last-child {
+  border-bottom: none;
+}
+
+.accordionHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.icon {
+  font-size: 24px;
+  color: #9ca3af;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+.icon.open {
+  transform: rotate(45deg);
+}
+
+.headerTitle {
+  /* Renamed from .title to avoid conflict */
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.accordionContent {
+  padding: 0 0 25px 39px; /* Aligns with headerTitle text */
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.7;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.instructionsList {
+  padding-left: 20px;
+  margin: 10px 0 20px;
+}
+
+.pdfList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pdfLink {
+  color: #e4002b;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.pdfLink:hover {
+  text-decoration: underline;
+}
+
+.pdfIcon {
+  width: 16px;
+  height: 16px;
+  color: #e4002b;
+}

@@ -1,0 +1,592 @@
+/* General Page Styles
+.servicesPage {
+  background-color: #f9fafb;
+  color: #1f2937;
+} */
+
+/* .sectionTitle {
+  font-size: 2.25rem; /* 36px *
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem; /* 48px *
+} */
+
+/* Page Header */
+/* .pageHeader {
+  background-color: #ffffff;
+  padding: 4rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; */
+/* max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.headerText {
+  flex: 1;
+  text-align: left;
+} */
+
+/* .headerImageContainer {
+  flex: 1; */
+/* } */
+
+/* .headerImage {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} */
+
+/* .pageTitle {
+  font-size: 3rem; 
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #1f2937;
+  text-align: left;
+}
+
+.pageSubtitle {
+  font-size: 1.25rem;
+  color: #4b5563;
+  max-width: 600px;
+  margin: 0;
+  text-align: left;
+} */
+/* 
+
+.productsSection {
+  padding: 4rem 1rem;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto; */
+/* } */
+
+/* .productCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+} */
+
+/* .productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+} */
+
+/* .productCard:hover .productImage {
+  transform: scale(1.05);
+}
+
+.productOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 1.5rem;
+} */
+
+/* .productName {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+} */
+
+/* CTA Button */
+/* .ctaContainer {
+  text-align: center;
+  margin-top: 3rem; 
+} */
+/* 
+.ctaButton {
+  display: inline-block;
+  background-color: #ae3f3d;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.125rem; 
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+} */
+/* 
+.ctaButton:hover {
+  background-color: #353535; 
+  transform: translateY(-2px);
+} */
+
+/* Installation Section */
+/* .installationSection {
+  background-color: #ffffff;
+  padding: 4rem 1rem;
+  text-align: center;
+} */
+
+/* .installationContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.installationIcon {
+  width: 4rem; 
+  height: 4rem; 
+  margin: 0 auto 1.5rem;
+  color: #ae3f3d; 
+} */
+
+/* .installationDescription {
+  font-size: 1.125rem; 
+  line-height: 1.75;
+  color: #4b5563;
+} */
+
+/* Service Process Section */
+/* .processSection {
+  padding: 4rem 1rem;
+}
+
+.processSteps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.processStep {
+  text-align: center;
+  position: relative;
+  flex: 1;
+} */
+
+/* .stepNumber {
+  width: 3rem; /* 48px */
+/* height: 3rem; /* 48px */
+/* border-radius: 50%;
+  background-color: #ae3f3d; /* Fallback for --color-primary */
+/* color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem; 24px
+  font-weight: 700;
+  margin: 0 auto 1rem;
+  border: 4px solid #f9fafb; */
+/* } */
+
+/* .stepTitle {
+  font-size: 1.125rem; /* 18px */
+/* font-weight: 600; */
+/* } */
+
+/* .stepConnector {
+  flex: 1;
+  height: 4px;
+  background-color: #d1d5db;
+  margin: 0 -1px;
+  transform: translateY(-2.5rem);
+} */
+
+/* ? */
+/* --- General Page Styles --- */
+.servicesPage {
+  background-color: #f9fafb;
+  color: #1f2937;
+  overflow-x: hidden;
+}
+
+.sectionTitle {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4rem; /* 64px */
+}
+
+/* --- Page Header --- */
+.pageHeader {
+  background-color: #ffffff;
+  padding: 5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.headerText {
+  flex: 1;
+}
+.headerImageContainer {
+  flex: 1;
+}
+
+.headerImage {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pageTitle {
+  font-size: 3rem; /* 48px */
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.pageSubtitle {
+  font-size: 1.25rem; /* 20px */
+  color: #4b5563;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* --- Products Section --- */
+.productsSection {
+  padding: 5rem 0;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.productCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.productCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.productCard:hover .productImage {
+  transform: scale(1.05);
+}
+
+.productOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: 1.5rem;
+}
+
+.productName {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* --- THE ELEGANT TESTIMONIALS SECTION --- */
+.testimonialsSection {
+  padding: 6rem 0; 
+  background-color: #1f2937; /* A sophisticated dark grey/blue for the background */
+  color: #f9fafb; /* Light text for contrast */
+  text-align: center;
+  position: relative; /* For potential background elements */
+  overflow: hidden; /* Ensures nothing spills out */
+}
+
+/* Subtle background pattern or gradient for elegance */
+.testimonialsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.05) 0%, transparent 40%),
+              radial-gradient(circle at bottom right, rgba(255,255,255,0.05) 0%, transparent 40%);
+  z-index: 0;
+  opacity: 0.3;
+}
+
+
+.lightText {
+  color: #f9fafb; /* Ensure section title is bright */
+}
+
+.testimonialSlider {
+  /* max-width: 900px; Slightly wider slider for impact */
+  margin: 0 auto;
+  position: relative; /* For z-index over pseudo-elements */
+  z-index: 1; /* Ensure slider content is above background effects */
+}
+.testimonialSlide {
+  padding: 2rem; /* More internal padding */
+  display: flex; /* Use flexbox for better alignment of quote and author */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(255, 255, 255, 0.05); Light, translucent background for each slide */
+  border-radius: 15px; /* Softer rounded corners */
+  min-height: 280px; /* Ensure consistent height for slides */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
+  backdrop-filter: blur(5px); /* Glassmorphism effect */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for a more interactive feel */
+.testimonialSlide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+.quote {
+  font-family: 'Georgia', serif; /* A classic serif font for gravitas */
+  font-size: 1.85rem; /* Slightly larger for impact */
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 2.5rem; /* More space below quote */
+  position: relative;
+  padding: 0 50px; /* Adjust padding for quotation marks */
+  text-align: center; /* Center the quote */
+  color: #e0e7ff; /* Slightly softer white for readability */
+  flex-grow: 1; /* Allow quote to take up available space */
+}
+.quote::before,
+.quote::after {
+  content: "“"; /* Use actual curly quotes */
+  position: absolute;
+  font-size: 5rem; /* Larger quotes */
+  font-family: serif;
+  color: rgba(255, 255, 255, 0.15); /* Subtler quote color */
+  line-height: 1; /* Prevent extra line height */
+}
+.quote::before {
+  left: 0;
+  top: -20px;
+}
+.quote::after {
+  content: "”";
+  right: 0;
+  bottom: -40px; /* Position bottom quote mark */
+  left: unset; /* Override left for after */
+}
+
+.author {
+  text-align: center; /* Center the author block */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem; /* Space between logo and text */
+}
+
+.companyLogo {
+  width: 60px; /* Larger logo */
+  height: 60px;
+  border-radius: 50%; /* Make logos round */
+  object-fit: contain; /* Ensure logos fit well */
+  background-color: rgba(255, 255, 255, 0.9); /* White background for logos if needed */
+  padding: 5px; /* Padding inside the circle */
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2); /* Subtle glow effect */
+}
+
+.authorName {
+  font-weight: 600; /* Slightly less bold, as company is primary focus */
+  font-size: 1.1rem;
+  color: #e0e7ff;
+}
+.authorCompany {
+  font-size: 1.05rem; /* Slightly larger company name */
+  font-weight: 500;
+  opacity: 0.9;
+  color: #a0aec0; /* A soft grey for company name */
+}
+.authorRole { /* Added style for the new role field if you use it */
+  font-size: 0.95rem;
+  opacity: 0.7;
+  color: #cbd5e0;
+}
+
+/* Swiper Pagination (dots) */
+.testimonialSlider :global(.swiper-pagination-bullet) {
+  background-color: rgba(255, 255, 255, 0.4); /* Subtler inactive dots */
+  width: 10px;
+  height: 10px;
+  margin: 0 6px !important; /* More space between dots */
+  transition: all 0.3s ease;
+}
+.testimonialSlider :global(.swiper-pagination-bullet-active) {
+  background-color: #ae3f3d; /* Your brand red for active dot */
+  width: 12px;
+  height: 12px;
+  box-shadow: 0 0 0 2px rgba(174, 63, 61, 0.4); /* A small glow */
+}
+
+/* --- Installation Section --- */
+.installationSection {
+  background-color: #ffffff;
+  padding: 5rem 0;
+  text-align: center;
+}
+.installationContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.installationIcon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1.5rem;
+  color: #ae3f3d;
+}
+.installationDescription {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #4b5563;
+}
+
+/* --- Service Process Section --- */
+.processSection {
+  padding: 5rem 0;
+}
+.processSteps {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.processStepWrapper {
+  flex: 1;
+} /* Added wrapper for animation */
+.processStep {
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+.stepNumber {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: white;
+  color: #ae3f3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 0 0 4px white; /* Knockout effect */
+  position: relative;
+  z-index: 2;
+}
+.stepTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.stepConnector {
+  position: absolute;
+  top: 1.5rem; /* Aligns with center of number circle */
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #e5e7eb;
+  z-index: 1;
+}
+
+/* --- CTA Button --- */
+.ctaContainer {
+  text-align: center;
+  margin-top: 4rem;
+}
+.ctaButton {
+  display: inline-block;
+  background-color: #ae3f3d;
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 6px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.ctaButton:hover {
+  background-color: #923432; /* Darker red */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(174, 63, 61, 0.2);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quote {
+    font-size: 1.5rem;
+    padding: 0 30px;
+  }
+  .quote::before {
+    font-size: 4rem;
+    top: -10px;
+  }
+  .quote::after {
+    font-size: 4rem;
+    bottom: -30px;
+  }
+  .companyLogo {
+    width: 50px;
+    height: 50px;
+  }
+  .authorCompany {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote {
+    font-size: 1.3rem;
+    padding: 0 20px;
+    margin-bottom: 2rem;
+  }
+  .quote::before {
+    font-size: 3rem;
+    top: -5px;
+  }
+  .quote::after {
+    font-size: 3rem;
+    bottom: -20px;
+  }
+  .testimonialsSection {
+    padding: 4rem 0;
+  }
+  .testimonialSlide {
+    min-height: 250px;
+    padding: 1.5rem;
+  }
+}

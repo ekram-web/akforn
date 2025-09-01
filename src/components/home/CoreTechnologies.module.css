@@ -1,0 +1,239 @@
+/* .coreTechSection {
+  padding: 80px 0;
+  background-color: #000;
+  color: white;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.viewAllLink {
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.carouselContainer {
+  margin: 0 auto;
+  position: relative;
+}
+
+.slide {
+  display: flex !important;
+  align-items: center;
+  gap: 60px;
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  padding: 60px;
+}
+
+.slideImage {
+  flex: 0 0 50%;
+}
+.slideImage img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.slideContent {
+  flex: 0 0 50%;
+}
+
+.slideTitle {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+.slideDescription {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.learnMoreButton {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.learnMoreButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.swiperButtonPrev,
+.swiperButtonNext {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.swiperButtonPrev:hover,
+.swiperButtonNext:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.swiperButtonPrev,
+.swiperButtonNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiperButtonPrev {
+  left: -60px;
+}
+
+.swiperButtonNext {
+  right: -60px;
+}
+
+.swiperPagination {
+  position: relative;
+  display: flex;
+  gap: 12px;
+}
+
+.swiperPaginationBullet {
+  width: 8px;
+  height: 8px;
+  background-color: #666;
+  border-radius: 50%;
+  opacity: 1;
+  transition: background-color 0.3s ease;
+}
+
+.swiperPaginationBulletActive {
+  background-color: white;
+} */
+
+/* ?? */
+
+.coreTechSection {
+  padding: 6rem 0;
+  background-color: #111827; /* Dark blue-gray */
+  color: white;
+}
+.container {
+  display: flex;
+  gap: 4rem;
+}
+
+/* --- Left Column --- */
+.leftColumn {
+  flex: 1;
+}
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+.techList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.techList li {
+  padding: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.techList li.active {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.techList h3 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+  color: white;
+}
+.techList p {
+  margin: 0;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+/* --- Right Column --- */
+.rightColumn {
+  flex: 1.5;
+  position: sticky; /* Makes it stick while scrolling past the list */
+  top: 120px;
+  height: 500px;
+}
+.imageContainer {
+  width: 100%;
+  height: 70%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+.imageContainer img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.descriptionContainer {
+  padding-top: 2rem;
+  height: 30%;
+}
+.descriptionContainer p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #d1d5db;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
+  .rightColumn {
+    position: static;
+    height: auto;
+  }
+}

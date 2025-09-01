@@ -1,0 +1,345 @@
+:root {
+  --ak-red: #a42024;
+  --ak-text-light: #cccccc;
+  --ak-dark-bg: #212121; /* Added a variable for consistency */
+}
+
+.footer {
+  color: var(--ak-text-light);
+  padding: 80px 0 20px;
+  position: relative;
+  background-color: var(--ak-dark-bg);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.02) 10px,
+    rgba(255, 255, 255, 0.02) 20px
+  );
+}
+
+.footerContainer {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #444; /* Added a subtle separator */
+  margin-bottom: 40px; /* Space before bottom section */
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+.logoImage {
+  height: 40px;
+  width: auto;
+}
+/* Removed .logoBox as it's not used with the image logo */
+/* .logoBox {
+  width: 50px;
+  height: 40px;
+  background-color: var(--ak-red);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 4px;
+  padding-top: 4px;
+} */
+
+.footerDescription {
+  line-height: 1.7;
+  color: #a0a0a0;
+}
+
+.footerHeading {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: white;
+  position: relative;
+  padding-bottom: 10px;
+}
+.footerHeading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--ak-red);
+}
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.footerLink {
+  color: var(--ak-text-light);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  font-size: 15px; /* Slightly smaller for better fit on small screens */
+}
+.footerLink:hover {
+  color: white;
+  transform: translateX(5px);
+}
+.chevron {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid var(--ak-text-light);
+  border-bottom: 2px solid var(--ak-text-light);
+  transform: rotate(-45deg);
+  transition: border-color 0.3s ease;
+  flex-shrink: 0; /* Prevent chevron from shrinking */
+}
+.footerLink:hover .chevron {
+  border-color: white;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  line-height: 1.6;
+  font-size: 15px; /* Consistent font size */
+}
+.iconWrapper {
+  width: 35px; /* Slightly smaller icons for better alignment */
+  height: 35px;
+  border: 1px solid #555;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.iconWrapper svg {
+  width: 18px; /* Slightly smaller SVG */
+  height: 18px;
+  fill: var(--ak-text-light);
+}
+
+/* --- Footer Bottom Section --- */
+.footerBottom {
+  padding: 0 0 20px; /* Adjusted padding as border-top is now on container */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-between;
+  align-items: center; /* Align items vertically in the center */
+  gap: 30px; /* Reduced gap slightly */
+}
+
+.newsletter {
+  flex: 1 1 45%; /* Allow it to grow and shrink, minimum 45% width */
+  max-width: 500px; /* Prevent it from getting too wide on large screens */
+}
+.newsletterTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.newsletterTitle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--ak-red);
+}
+.newsletter p {
+  color: #a0a0a0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.newsletterForm {
+  display: flex;
+  width: 100%; /* Ensure form takes full width of its container */
+}
+.newsletterForm input {
+  flex-grow: 1;
+  padding: 12px 15px; /* Slightly more padding for better touch targets */
+  border: 1px solid #555;
+  background: #333;
+  color: white;
+  border-radius: 4px 0 0 4px;
+  font-size: 15px;
+}
+.newsletterForm button {
+  padding: 12px 20px;
+  border: none;
+  background: var(--ak-red);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+.newsletterForm button:hover {
+  background-color: #8a1a1e; /* Darker red on hover */
+}
+
+.copyright {
+  flex: 1 1 45%; /* Also allow it to grow/shrink, minimum 45% width */
+  text-align: right;
+  color: #a0a0a0;
+  font-size: 14px;
+}
+.copyright p {
+  margin-bottom: 10px; /* Space between copyright text and links */
+}
+.bottomLinks {
+  display: flex;
+  flex-wrap: wrap; /* Allow links to wrap */
+  gap: 15px; /* Slightly reduced gap */
+  justify-content: flex-end;
+}
+.bottomLinks a {
+  color: #a0a0a0;
+  text-decoration: none;
+  font-size: 13px; /* Slightly smaller for bottom links */
+  transition: color 0.3s ease;
+}
+.bottomLinks a:hover {
+  color: white;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet and smaller desktops (992px to 769px) */
+@media (max-width: 992px) {
+  .footerContainer {
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 30px;
+  }
+  .footerColumn:nth-child(1) {
+    /* Company info takes full width of a column */
+    grid-column: span 1;
+  }
+  .footerColumn:nth-child(2),
+  .footerColumn:nth-child(3),
+  .footerColumn:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  .footerBottom {
+    flex-direction: column; /* Stack newsletter and copyright vertically */
+    align-items: center; /* Center items */
+    text-align: center; /* Center text */
+    gap: 40px;
+  }
+  .newsletter,
+  .copyright {
+    flex: 1 1 100%; /* Take full width */
+    max-width: 500px; /* Constrain max width for readability */
+    text-align: center;
+  }
+  .newsletterTitle::after {
+    left: 50%; /* Center the heading underline */
+    transform: translateX(-50%);
+  }
+  .bottomLinks {
+    justify-content: center; /* Center bottom links */
+  }
+}
+
+/* Large Phones and Small Tablets (768px to 577px) */
+@media (max-width: 768px) {
+  .footerContainer {
+    grid-template-columns: 1fr; /* Single column layout */
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+  }
+  .footerColumn {
+    text-align: center; /* Center content of each column */
+  }
+  .footerLogo {
+    justify-content: center; /* Center logo */
+  }
+  .footerHeading::after {
+    left: 50%; /* Center the heading underline */
+    transform: translateX(-50%);
+  }
+  .contactItem {
+    justify-content: center; /* Center contact items */
+  }
+  .contactItem .iconWrapper {
+    margin-right: 0; /* Remove gap if items stack */
+  }
+  .newsletterForm {
+    max-width: 400px; /* Constrain form width */
+    margin: 0 auto; /* Center the form */
+  }
+}
+
+/* Smaller Phones (576px and below) */
+@media (max-width: 576px) {
+  .footer {
+    padding: 60px 0 15px;
+  }
+  .footerContainer {
+    gap: 25px;
+    padding-bottom: 30px;
+    margin-bottom: 25px;
+  }
+  .footerLogo {
+    font-size: 20px;
+  }
+  .logoImage {
+    height: 35px;
+  }
+  .footerHeading {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .footerLink,
+  .contactItem span {
+    font-size: 14px;
+  }
+  .iconWrapper {
+    width: 30px;
+    height: 30px;
+  }
+  .iconWrapper svg {
+    width: 16px;
+    height: 16px;
+  }
+  .newsletter p,
+  .copyright p {
+    font-size: 13px;
+  }
+  .newsletterForm input,
+  .newsletterForm button {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  .bottomLinks {
+    gap: 10px;
+  }
+  .bottomLinks a {
+    font-size: 12px;
+  }
+}

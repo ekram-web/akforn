@@ -1,0 +1,92 @@
+.page {
+  background-color: #f9fafb;
+}
+
+.heroSection {
+  position: relative;
+  padding: 6rem 0;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://picsum.photos/seed/products-hero/1920/1080");
+  border-bottom: 5px solid var(--color-primary);
+}
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.heroTitle {
+  position: relative;
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.introSection {
+  text-align: center;
+  padding: 4rem 0;
+}
+.introSection p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 2rem;
+  padding-bottom: 6rem;
+}
+
+.categoryCard {
+  position: relative;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: transform 0.4s ease;
+}
+.categoryCard:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.4s ease;
+}
+.categoryCard:hover .cardOverlay {
+  background-color: rgba(174, 63, 61, 0.7); /* Your brand red on hover */
+}
+
+.cardTitle {
+  position: relative;
+  z-index: 2;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .categoryGrid {
+    grid-template-columns: 1fr;
+  }
+}

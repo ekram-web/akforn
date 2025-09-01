@@ -1,0 +1,121 @@
+.legalPage {
+  padding: 60px 0;
+  background-color: #f9fafb;
+}
+
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 240px 1fr; /* Sidebar width and main content */
+  gap: 50px;
+}
+
+/* --- Sidebar Styles --- */
+.sidebar {
+  border-right: 1px solid #e5e7eb;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  position: sticky; /* Makes the sidebar stick on scroll */
+  top: 120px; /* Adjust based on your navbar height + some padding */
+}
+
+.navLink {
+  padding: 12px 20px;
+  margin-right: -1px; /* To overlap the main border on active */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #4b5563; /* Muted gray text */
+  border-right: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.navLink:hover {
+  color: #111827;
+  background-color: #f3f4f6;
+}
+
+.navLink.active {
+  color: #E4002B; /* Hikvision Red */
+  border-right-color: #E4002B;
+  font-weight: 600;
+  background-color: white;
+}
+
+/* --- Main Content Styles --- */
+.mainContent {
+  background-color: white;
+  padding: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.contentWrapper {
+  max-width: 800px; /* Limits the width of text for readability */
+}
+
+.pageTitle {
+  font-size: 32px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 10px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 20px;
+}
+
+.lastUpdated {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  margin: 40px 0 15px;
+}
+
+.subSectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin: 25px 0 10px;
+}
+
+.mainContent p, .mainContent li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.mainContent ul, .mainContent ol {
+  padding-left: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .layoutGrid {
+    grid-template-columns: 1fr; /* Stack sidebar and content on smaller screens */
+  }
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 30px;
+  }
+  .sidebarNav {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .navLink {
+    border-right: none;
+    border-bottom: 2px solid transparent;
+    padding: 15px;
+  }
+  .navLink.active {
+    border-bottom-color: #E4002B;
+  }
+}

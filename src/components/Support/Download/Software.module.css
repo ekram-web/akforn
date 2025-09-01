@@ -1,0 +1,214 @@
+.softwarePageContainer {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.softwareMainContent {
+  flex: 3;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.softwareHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.softwareTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.searchSection {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.searchInput {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.searchButton {
+  background-color: #e62129;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.searchIcon {
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+
+.softwareList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.softwareItem {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.softwareIcon {
+  width: 48px;
+  height: 48px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.softwareDetails {
+  flex-grow: 1;
+}
+
+.softwareName {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.softwareInfo {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.softwareDescription {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.5;
+}
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #e62129;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.downloadButton:hover {
+  background-color: #d11920;
+}
+
+.downloadIcon {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .softwareItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .softwareIcon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .downloadButton {
+    margin-left: 0;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+}
+
+
+
+.softwareTitle {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.softwareSection {
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 1.8em;
+  color: #555;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.softwareList {
+  list-style: none;
+  padding: 0;
+}
+
+.softwareItem {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.softwareItem:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.softwareInfo {
+  flex-grow: 1;
+}
+
+.softwareName {
+  font-size: 1.2em;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.softwareVersion,
+.softwareDate {
+  font-size: 0.9em;
+  color: #777;
+}
+
+
+
+
+.noSoftware {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}

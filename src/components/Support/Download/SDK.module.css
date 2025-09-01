@@ -1,0 +1,189 @@
+.sdkContainer {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.searchSection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.searchInput {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.searchButton {
+  background-color: #e62129;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.searchIcon {
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+
+.filterSection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.filterLabel {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.filterOptions {
+  display: flex;
+  gap: 10px;
+}
+
+.filterButton {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+
+.sdkListContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.sdkItem {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: relative; /* For positioning the download icon */
+}
+
+.sdkIcon {
+  width: 50px;
+  height: 50px;
+  background-color: #e62129;
+  border-radius: 5px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sdkDetails {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sdkName {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.sdkInfo {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.sdkDescription {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px; /* Add some space below description */
+}
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #e62129;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.downloadButton:hover {
+  background-color: #d11920;
+}
+
+.downloadIcon {
+  font-size: 16px;
+}
+
+.noResults {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  grid-column: 1 / -1;
+}
+
+.noResults p {
+  font-size: 18px;
+  color: #495057;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.noResultsSubtext {
+  font-size: 14px !important;
+  color: #6c757d !important;
+  font-weight: 400 !important;
+  margin-bottom: 0 !important;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sdkItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sdkIcon {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .downloadButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,14 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Camera Body -->
+  <rect x="40" y="60" width="120" height="80" rx="10" fill="#0066CC"/>
+  
+  <!-- Lens -->
+  <circle cx="100" cy="100" r="30" fill="#004D99"/>
+  <circle cx="100" cy="100" r="20" fill="#003366"/>
+  
+  <!-- Flash -->
+  <rect x="140" y="70" width="10" height="10" rx="2" fill="#FF6600"/>
+  
+  <!-- Text -->
+  <text x="100" y="170" font-family="Arial" font-size="24" font-weight="bold" fill="#333333" text-anchor="middle">AKvision</text>
+</svg>
