@@ -11,6 +11,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 
+import videoSource from "../../assets/14285055_1920_1080_25fps.mp4";
+
   import cam1 from "../../assets/DSC02547.jpg";
   import cam2 from "../../../public/10001.jpg";
   import cam3 from "../../../public/10002.png";
@@ -161,8 +163,10 @@ const About = () => {
           <AnimateOnScroll>
             <div className={styles.videoPlayer}>
               <video
-                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                // src="https://www.w3schools.com/html/mov_bbb.mp4"
+                src={videoSource}
                 poster="https://picsum.photos/seed/video-poster/1200/675"
+                
                 controls
               />
             </div>
