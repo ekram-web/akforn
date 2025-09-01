@@ -69,6 +69,8 @@ import { mainNavigation } from "../../../config/navigation";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import styles from "./MainNavbar.module.css";
 
+import logoImage from "../../../../public/Logo.png"; // Adjust the path as necessary
+
 const MainNavbar = () => {
   return (
     <div className={styles.mainNavbar}>
@@ -76,7 +78,7 @@ const MainNavbar = () => {
         {/* Logo */}
         <Link to="/" className={styles.logo}>
           <img
-            src="../../../../public/Logo.png"
+            src= {logoImage}
             alt="AK Vision Logo"
             className={styles.logoImg}
           />
