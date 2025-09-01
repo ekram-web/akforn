@@ -76,7 +76,7 @@ const MainNavbar = () => {
         {/* Logo */}
         <Link to="/" className={styles.logo}>
           <img
-            src="/src/assets/Logo.png"
+            src="../../../../public/Logo.png"
             alt="AK Vision Logo"
             className={styles.logoImg}
           />
