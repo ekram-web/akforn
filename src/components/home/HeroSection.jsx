@@ -45,7 +45,7 @@ const HeroSection = () => {
       </video>
       <div className={styles.overlay}></div>
       <div className={`container ${styles.content}`}>
-        <h1 className={styles.title}>Empowhdfgfgering Vision for a Safer World</h1>
+        <h1 className={styles.title}>Empowering Vision for a Safer World</h1>
         <p className={styles.subtitle}>
           Innovative IoT solutions with video as the core competency
         </p>
