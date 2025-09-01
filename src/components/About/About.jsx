@@ -10,16 +10,15 @@ import Counter from "../common/Counter"; // <-- IMPORT THE NEW COUNTER
 import "swiper/css";
 import "swiper/css/navigation";
 
-
 import videoSource from "../../assets/14285055_1920_1080_25fps.mp4";
 
-  import cam1 from "../../assets/DSC02547.jpg";
-  import cam2 from "../../../public/10001.jpg";
-  import cam3 from "../../../public/10002.png";
-  import cam4 from "../../../public/10003.jpg";
-  import cam5 from "../../../public/10005.jpg";
-  import cam6 from "../../../public/io.jpg";
-  import cam7 from "../../../public/10004.png";
+import cam1 from "../../assets/DSC02547.jpg";
+import cam2 from "../../../public/10001.jpg";
+import cam3 from "../../../public/10002.png";
+import cam4 from "../../../public/10003.jpg";
+import cam5 from "../../../public/10005.jpg";
+import cam6 from "../../../public/io.jpg";
+import cam7 from "../../../public/10004.png";
 
 // Data with the '+' removed from the value
 const stats = [
@@ -59,7 +58,6 @@ const partners = [
   { name: "Garad MAll", src: cam7 },
   { name: "Addis Ababa Police", src: cam6 },
 ];
-
 
 const About = () => {
   return (
@@ -133,7 +131,7 @@ const About = () => {
               <div className={styles.processNumber}>01</div>
               <h3>Our Vision</h3>
               <p>
-                 To be the global leader in security, creating a safer world
+                To be the global leader in security, creating a safer world
                 through continuous innovation.
               </p>
             </AnimateOnScroll>
@@ -166,7 +164,6 @@ const About = () => {
                 // src="https://www.w3schools.com/html/mov_bbb.mp4"
                 src={videoSource}
                 poster="https://picsum.photos/seed/video-poster/1200/675"
-                
                 controls
               />
             </div>
