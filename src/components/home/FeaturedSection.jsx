@@ -156,8 +156,8 @@ import styles from "./FeaturedSection.module.css";
 import cam1 from "../../assets/Picsart_25-08-22_09-59-03-985.jpg";
 import cam2 from "../../assets/Picsart_25-08-22_10-05-50-045.jpg";
 import cam3 from "../../assets/Picsart_25-08-22_10-02-00-821.jpg";
-import cam4 from "../../assets/Picsart_25-08-22_10-05-50-045.jpg";
-import cam5 from "../../assets/DSC02622.jpg";
+import cam4 from "../../assets/Picsart_25-08-22_10-00-40-701.jpg";
+import cam5 from "../../assets/Picsart_25-08-22_10-01-18-095.jpg";
 
 // Reusable Card Component with the correct structure
 const FeatureCard = ({ image, title, description }) => (
@@ -208,7 +208,7 @@ const FeaturedSection = () => {
     },
     {
       // img: "../../assets/DSC02622.jpg",
-      img: cam4,
+      img: cam5,
       title: "PTZ Cameras",
       desc: "Precision pan-tilt-zoom with smart tracking.",
     },
