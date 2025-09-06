@@ -148,18 +148,122 @@
 
 // ?
 
-import React from "react";
+// import React from "react";
+// import styles from "./FeaturedSection.module.css";
+
+
+// // ✅ Import your images properly from src/assets
+// import cam1 from "../../assets/Picsart_25-08-22_09-59-03-985.jpg";
+// import cam2 from "../../assets/Picsart_25-08-22_10-05-50-045.jpg";
+// import cam3 from "../../assets/Picsart_25-08-22_10-02-00-821.jpg";
+// import cam4 from "../../assets/Picsart_25-08-22_10-00-40-701.jpg";
+// import cam5 from "../../assets/Picsart_25-08-22_10-01-18-095.jpg";
+
+// // Reusable Card Component with the correct structure
+// const FeatureCard = ({ image, title, description }) => (
+//   <div className={styles.card}>
+//     <div className={styles.imageWrapper}>
+//       <img src={image} alt={title} />
+//       <div className={styles.gradientOverlay}></div>
+//       <div className={styles.titleBar}>
+//         <h3>{title}</h3>
+//       </div>
+//       <div className={styles.hoverPanel}>
+//         <h4>{title}</h4>
+//         <p>{description}</p>
+//         <a href="#">
+//           Learn More <span>→</span>
+//         </a>
+//       </div>
+//     </div>
+//   </div>
+// );
+
+// // Main Section Component
+// const FeaturedSection = () => {
+//   const features = [
+//     {
+//       // img: "../../assets/Picsart_25-08-22_09-59-03-985.jpg",
+//       img: cam1,
+//       title: "AI Network Cameras",
+//       desc: "High-performance cameras with AI analytics.",
+//     },
+//     {
+//       // img: "../../assets/Picsart_25-08-22_10-05-50-045.jpg",
+//       img: cam2,
+//       title: "Intelligent NVRs",
+//       desc: "Reliable storage with smart search capabilities.",
+//     },
+//     {
+//       // img: "../../assets/Picsart_25-08-22_10-02-00-821.jpg",
+//       img: cam3,
+//       title: "Access Control",
+//       desc: "Secure and seamless entry management.",
+//     },
+//     {
+//       // img: "../../assets/Picsart_25-08-22_10-05-50-045.jpg",
+//       img: cam4,
+//       title: "Video Intercom",
+//       desc: "Crystal-clear communication for any building.",
+//     },
+//     {
+//       // img: "../../assets/DSC02622.jpg",
+//       img: cam5,
+//       title: "PTZ Cameras",
+//       desc: "Precision pan-tilt-zoom with smart tracking.",
+//     },
+//   ];
+
+//   // This is a simple hook to handle the scrolling buttons
+//   const scrollRef = React.useRef(null);
+//   const scroll = (direction) => {
+//     const { current } = scrollRef;
+//     if (current) {
+//       const scrollAmount =
+//         direction === "left"
+//           ? -current.offsetWidth * 0.75
+//           : current.offsetWidth * 0.75;
+//       current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+//     }
+//   };
+
+//   return (
+//     <section className={styles.featuredSection}>
+//       <div className="container">
+//         <div className={styles.header}>
+//           <h2>Product Showcase</h2>
+//           <div className={styles.navButtons}>
+//             <button onClick={() => scroll("left")}>‹</button>
+//             <button onClick={() => scroll("right")}>›</button>
+//           </div>
+//         </div>
+//         <div className={styles.scrollContainer} ref={scrollRef}>
+//           {features.map((feature, index) => (
+//             <FeatureCard
+//               key={index}
+//               image={feature.img}
+//               title={feature.title}
+//               description={feature.desc}
+//             />
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default FeaturedSection;
+
+
+// ???????
+
+
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./FeaturedSection.module.css";
+import apiClient from "../../api/apiClient"; // <-- Import the real API client
 
-
-// ✅ Import your images properly from src/assets
-import cam1 from "../../assets/Picsart_25-08-22_09-59-03-985.jpg";
-import cam2 from "../../assets/Picsart_25-08-22_10-05-50-045.jpg";
-import cam3 from "../../assets/Picsart_25-08-22_10-02-00-821.jpg";
-import cam4 from "../../assets/Picsart_25-08-22_10-00-40-701.jpg";
-import cam5 from "../../assets/Picsart_25-08-22_10-01-18-095.jpg";
-
-// Reusable Card Component with the correct structure
+// --- Reusable Card Component (No changes needed) ---
+// This component is perfect as it is, it just receives props.
 const FeatureCard = ({ image, title, description }) => (
   <div className={styles.card}>
     <div className={styles.imageWrapper}>
@@ -179,53 +283,49 @@ const FeatureCard = ({ image, title, description }) => (
   </div>
 );
 
-// Main Section Component
-const FeaturedSection = () => {
-  const features = [
-    {
-      // img: "../../assets/Picsart_25-08-22_09-59-03-985.jpg",
-      img: cam1,
-      title: "AI Network Cameras",
-      desc: "High-performance cameras with AI analytics.",
-    },
-    {
-      // img: "../../assets/Picsart_25-08-22_10-05-50-045.jpg",
-      img: cam2,
-      title: "Intelligent NVRs",
-      desc: "Reliable storage with smart search capabilities.",
-    },
-    {
-      // img: "../../assets/Picsart_25-08-22_10-02-00-821.jpg",
-      img: cam3,
-      title: "Access Control",
-      desc: "Secure and seamless entry management.",
-    },
-    {
-      // img: "../../assets/Picsart_25-08-22_10-05-50-045.jpg",
-      img: cam4,
-      title: "Video Intercom",
-      desc: "Crystal-clear communication for any building.",
-    },
-    {
-      // img: "../../assets/DSC02622.jpg",
-      img: cam5,
-      title: "PTZ Cameras",
-      desc: "Precision pan-tilt-zoom with smart tracking.",
-    },
-  ];
 
-  // This is a simple hook to handle the scrolling buttons
-  const scrollRef = React.useRef(null);
+// --- Main Section Component (FINAL INTEGRATED VERSION) ---
+const FeaturedSection = () => {
+  // --- STATE MANAGEMENT ---
+  const [featuredItems, setFeaturedItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
+  const storageUrl = import.meta.env.VITE_API_STORAGE_URL || 'http://127.0.0.1:8000/storage';
+
+  // --- DATA FETCHING ---
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch the list of featured items from your public API endpoint
+        const response = await apiClient.get('/featured-items');
+        setFeaturedItems(response.data);
+      } catch (err) {
+        setError("Could not load featured products.");
+        console.error("Fetch Featured Items Error:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  // This hook for scrolling buttons remains the same
+  const scrollRef = useRef(null);
   const scroll = (direction) => {
     const { current } = scrollRef;
     if (current) {
-      const scrollAmount =
-        direction === "left"
-          ? -current.offsetWidth * 0.75
-          : current.offsetWidth * 0.75;
+      const scrollAmount = direction === "left" ? -current.offsetWidth * 0.75 : current.offsetWidth * 0.75;
       current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
+
+  // --- RENDER LOGIC ---
+
+  // Don't render anything if it's loading, there's an error, or the list is empty.
+  if (loading || error || featuredItems.length === 0) {
+    return null;
+  }
 
   return (
     <section className={styles.featuredSection}>
@@ -238,12 +338,13 @@ const FeaturedSection = () => {
           </div>
         </div>
         <div className={styles.scrollContainer} ref={scrollRef}>
-          {features.map((feature, index) => (
+          {/* Now mapping over the DYNAMIC data from state */}
+          {featuredItems.map((feature) => (
             <FeatureCard
-              key={index}
-              image={feature.img}
+              key={feature.id} // Use the unique ID from the database
+              image={`${storageUrl}/${feature.image_url}`}
               title={feature.title}
-              description={feature.desc}
+              description={feature.description}
             />
           ))}
         </div>

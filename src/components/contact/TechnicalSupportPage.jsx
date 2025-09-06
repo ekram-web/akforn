@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./ContactPages.module.css";
+import apiClient from "../../api/apiClient";
 
 const TechnicalSupportPage = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,8 @@ const TechnicalSupportPage = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,22 +33,52 @@ const TechnicalSupportPage = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Here you would typically send the data to your backend
+  //   console.log("Support ticket submitted:", formData);
+  //   setSubmitted(true);
+  //   // Reset form after submission
+  //   setFormData({
+  //     name: "",
+  //     email: "",
+  //     phone: "",
+  //     productModel: "",
+  //     serialNumber: "",
+  //     issueType: "",
+  //     description: "",
+  //     attachFile: null,
+  //   });
+  // };
+
+  // In TechnicalSupportPage.jsx
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log("Support ticket submitted:", formData);
-    setSubmitted(true);
-    // Reset form after submission
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      productModel: "",
-      serialNumber: "",
-      issueType: "",
-      description: "",
-      attachFile: null,
-    });
+    setSubmitting(true); // You will need to add the 'submitting' state
+    setError(""); // You will need to add the 'error' state
+
+    const submissionData = {
+      ...formData,
+      type: "Technical", // The only change is the type
+    };
+
+    try {
+      // We send a FormData object because this form supports file uploads
+      const formPayload = new FormData();
+      for (const key in submissionData) {
+        formPayload.append(key, submissionData[key]);
+      }
+
+      await apiClient.post("/submissions", formPayload, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setError("Submission failed. Please try again later.");
+      console.error("Technical form submission error:", err.response?.data);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -191,8 +224,16 @@ const TechnicalSupportPage = () => {
             </p>
           </div>
 
-          <button type="submit" className={styles.submitButton}>
-            Submit Support Ticket
+          {error && (
+            <p style={{ color: "red", textAlign: "center" }}>{error}</p>
+          )}
+
+          <button
+            type="submit"
+            className={styles.submitButton}
+            disabled={submitting}
+          >
+            {submitting ? "Submitting..." : "Submit Inquiry"}
           </button>
         </form>
       )}

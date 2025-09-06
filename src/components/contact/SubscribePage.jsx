@@ -1,67 +1,97 @@
-import React, { useState } from 'react';
-import styles from './ContactPages.module.css';
+import React, { useState } from "react";
+import styles from "./ContactPages.module.css";
+import apiClient from "../../api/apiClient";
 
 const SubscribePage = () => {
   const [formData, setFormData] = useState({
-    email: '',
-    firstName: '',
-    lastName: '',
+    email: "",
+    firstName: "",
+    lastName: "",
     interests: [],
-    frequency: 'monthly'
+    frequency: "monthly",
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
     if (checked) {
-      setFormData(prevData => ({
+      setFormData((prevData) => ({
         ...prevData,
-        interests: [...prevData.interests, value]
+        interests: [...prevData.interests, value],
       }));
     } else {
-      setFormData(prevData => ({
+      setFormData((prevData) => ({
         ...prevData,
-        interests: prevData.interests.filter(interest => interest !== value)
+        interests: prevData.interests.filter((interest) => interest !== value),
       }));
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Subscription submitted:', formData);
-    setSubmitted(true);
-    // Reset form after submission
-    setFormData({
-      email: '',
-      firstName: '',
-      lastName: '',
-      interests: [],
-      frequency: 'monthly'
-    });
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Here you would typically send the data to your backend
+  //   console.log("Subscription submitted:", formData);
+  //   setSubmitted(true);
+  //   // Reset form after submission
+  //   setFormData({
+  //     email: "",
+  //     firstName: "",
+  //     lastName: "",
+  //     interests: [],
+  //     frequency: "monthly",
+  //   });
+  // };
 
+  // In SubscribePage.jsx
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError("");
+
+    const submissionData = {
+      ...formData,
+      type: "Subscription", // The only change is the type
+    };
+
+    try {
+      await apiClient.post("/submissions", submissionData);
+      setSubmitted(true);
+    } catch (err) {
+      setError("Subscription failed. Please try again later.");
+      console.error("Subscription form submission error:", err.response?.data);
+    } finally {
+      setSubmitting(false);
+    }
+  };
   return (
     <div className={styles.contactPageContainer}>
       <div className={styles.contactHeader}>
         <h1>Subscribe to Our Newsletter</h1>
-        <p>Stay updated with the latest news, product releases, and security insights</p>
+        <p>
+          Stay updated with the latest news, product releases, and security
+          insights
+        </p>
       </div>
 
       {submitted ? (
         <div className={styles.successMessage}>
           <h2>Thank you for subscribing!</h2>
-          <p>You've been added to our mailing list and will start receiving updates soon.</p>
-          <button 
+          <p>
+            You've been added to our mailing list and will start receiving
+            updates soon.
+          </p>
+          <button
             className={styles.newInquiryButton}
             onClick={() => setSubmitted(false)}
           >
@@ -117,40 +147,40 @@ const SubscribePage = () => {
                   type="checkbox"
                   name="interests"
                   value="product-updates"
-                  checked={formData.interests.includes('product-updates')}
+                  checked={formData.interests.includes("product-updates")}
                   onChange={handleCheckboxChange}
                 />
                 Product Updates
               </label>
-              
+
               <label className={styles.checkbox}>
                 <input
                   type="checkbox"
                   name="interests"
                   value="security-news"
-                  checked={formData.interests.includes('security-news')}
+                  checked={formData.interests.includes("security-news")}
                   onChange={handleCheckboxChange}
                 />
                 Security News & Trends
               </label>
-              
+
               <label className={styles.checkbox}>
                 <input
                   type="checkbox"
                   name="interests"
                   value="case-studies"
-                  checked={formData.interests.includes('case-studies')}
+                  checked={formData.interests.includes("case-studies")}
                   onChange={handleCheckboxChange}
                 />
                 Case Studies & Success Stories
               </label>
-              
+
               <label className={styles.checkbox}>
                 <input
                   type="checkbox"
                   name="interests"
                   value="events"
-                  checked={formData.interests.includes('events')}
+                  checked={formData.interests.includes("events")}
                   onChange={handleCheckboxChange}
                 />
                 Events & Webinars
@@ -173,13 +203,22 @@ const SubscribePage = () => {
             </select>
           </div>
 
-          <button type="submit" className={styles.submitButton}>
-            Subscribe Now
-          </button>
+          {error && (
+                      <p style={{ color: "red", textAlign: "center" }}>{error}</p>
+                    )}
           
+                    <button
+                      type="submit"
+                      className={styles.submitButton}
+                      disabled={submitting}
+                    >
+                      {submitting ? "Submitting..." : "Submit Inquiry"}
+                    </button>
+
           <p className={styles.privacyNote}>
-            By subscribing, you agree to our <a href="/privacy-policy">Privacy Policy</a>. 
-            You can unsubscribe at any time.
+            By subscribing, you agree to our{" "}
+            <a href="/privacy-policy">Privacy Policy</a>. You can unsubscribe at
+            any time.
           </p>
         </form>
       )}

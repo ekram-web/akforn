@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './ContactPages.module.css';
+import apiClient from "../../api/apiClient"; 
 
 const SalesContactPage = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ const SalesContactPage = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,21 +24,51 @@ const SalesContactPage = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      phone: '',
-      productInterest: '',
-      message: ''
-    });
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Here you would typically send the data to your backend
+  //   console.log('Form submitted:', formData);
+  //   setSubmitted(true);
+  //   // Reset form after submission
+  //   setFormData({
+  //     name: '',
+  //     email: '',
+  //     company: '',
+  //     phone: '',
+  //     productInterest: '',
+  //     message: ''
+  //   });
+  // };
+
+  // ??
+
+
+   const handleSubmit = async (e) => {
+     e.preventDefault();
+     setSubmitting(true);
+     setError("");
+
+     // 1. Create the final data object, MANUALLY adding the 'type'
+     const submissionData = {
+       ...formData,
+       type: "Sales", // This "tags" the submission
+     };
+
+     try {
+       // 2. Make the real API call to the single '/submissions' endpoint
+       await apiClient.post("/submissions", submissionData);
+
+       // 3. Handle success
+       setSubmitted(true);
+     } catch (err) {
+       // 4. Handle errors
+       setError("Submission failed. Please try again later.");
+       console.error("Sales form submission error:", err.response?.data);
+     } finally {
+       // 5. Reset submitting state
+       setSubmitting(false);
+     }
+   };
 
   return (
     <div className={styles.contactPageContainer}>
@@ -139,8 +172,16 @@ const SalesContactPage = () => {
             ></textarea>
           </div>
 
-          <button type="submit" className={styles.submitButton}>
-            Submit Inquiry
+          {error && (
+            <p style={{ color: "red", textAlign: "center" }}>{error}</p>
+          )}
+
+          <button
+            type="submit"
+            className={styles.submitButton}
+            disabled={submitting}
+          >
+            {submitting ? "Submitting..." : "Submit Inquiry"}
           </button>
         </form>
       )}
