@@ -1,5 +1,3 @@
-
-
 // // ?
 
 // import React from "react";
@@ -136,7 +134,6 @@
 //         </div>
 //         <br />
 //       </div>
-     
 
 //       {/* --- CORRECTED Bottom Section --- */}
 //       <div className={`container ${styles.footerBottom}`}>
@@ -171,7 +168,6 @@
 // };
 
 // export default Footer;
-
 
 // ???
 
@@ -246,7 +242,7 @@ const Footer = () => {
               alt="AK VISTION Logo"
               className={styles.logoImage}
             />
-            <span>AK-VISTION</span>
+            <span>AK VISTION</span>
           </Link>
           <p className={styles.footerDescription}>
             Leading provider of advanced security and surveillance solutions. We
