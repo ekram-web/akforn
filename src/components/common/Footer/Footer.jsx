@@ -175,7 +175,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import AkvistionLogo from "../../../assets/Logo.png";
-import apiClient from "../../../api/apiClient"; // <-- IMPORT THE REAL API CLIENT
+import apiClient from "../../../api/apiClient";
+import LeadCaptureModal from "../LeadCaptureModal/LeadCaptureModal";
 
 // --- SVG Icons (Your existing, correct icons) ---
 const MapPinIcon = () => (
@@ -214,6 +215,7 @@ const Footer = () => {
   // --- STATE MANAGEMENT for Contact Details ---
   const [contactDetails, setContactDetails] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   // --- DATA FETCHING ---
   useEffect(() => {
@@ -233,16 +235,32 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
+      {/* Footer Top CTA */}
+      <div className={styles.footerTopCta}>
+        <div className={`container ${styles.footerTopCtaContainer}`}>
+          <div className={styles.footerTopCtaText}>
+            <h2>Ready to secure your business?</h2>
+            <p>Get in touch with our experts today for a free consultation.</p>
+          </div>
+          <button 
+            className={styles.footerTopCtaButton}
+            onClick={() => setIsLeadModalOpen(true)}
+          >
+            Request Enterprise Quote
+          </button>
+        </div>
+      </div>
+
       <div className={`container ${styles.footerContainer}`}>
         {/* Column 1: Company Info (Static) */}
         <div className={styles.footerColumn}>
           <Link to="/" className={styles.footerLogo}>
             <img
               src={AkvistionLogo}
-              alt="AK VISTION Logo"
+              alt="AK VISION Logo"
               className={styles.logoImage}
             />
-            <span>AK VISTION</span>
+            <span>AK VISION</span>
           </Link>
           <p className={styles.footerDescription}>
             Leading provider of advanced security and surveillance solutions. We
@@ -335,7 +353,7 @@ const Footer = () => {
           </form>
         </div>
         <div className={styles.copyright}>
-          <p>© {currentYear} AKvision. All rights reserved.</p>
+          <p>© {currentYear} AK VISION. All rights reserved.</p>
           <div className={styles.bottomLinks}>
             <Link to="/legal/privacy-policy">Privacy Policy</Link>
             <Link to="/legal/terms-of-use">Terms of Service</Link>
@@ -344,6 +362,8 @@ const Footer = () => {
         </div>
         <div className={styles.bottomEmptySpace}></div>
       </div>
+
+      <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} initialIntent="Request Enterprise Quote" />
     </footer>
   );
 };

@@ -48,7 +48,7 @@ const AboutSection = () => {
         >
           <h2 className={styles.sectionTitle}>
             {/* <span>About</span> */}
-            <span>AK VISTION</span>
+            <span>AK VISION</span>
           </h2>
           <p className={styles.sectionSubtitle}>
             More than a company, we are your partners in protection.

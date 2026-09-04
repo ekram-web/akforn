@@ -311,7 +311,13 @@
   padding-left: 5px;
 }
 
-/* Desktop Search Box */
+/* Desktop Actions */
+.desktopActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .desktopSearch {
   display: flex;
 }
@@ -351,6 +357,23 @@
 
 .searchInput::placeholder {
   color: #999;
+}
+
+.desktopCtaButton {
+  background-color: #e62129;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+.desktopCtaButton:hover {
+  background-color: #c81d24;
+  transform: translateY(-1px);
 }
 
 /* Mobile Menu Button */
@@ -573,9 +596,9 @@
     height: 60px;
   }
 
-  /* Hide desktop navigation and search */
+  /* Hide desktop navigation and search/cta */
   .desktopNav,
-  .desktopSearch {
+  .desktopActions {
     display: none;
   }
 

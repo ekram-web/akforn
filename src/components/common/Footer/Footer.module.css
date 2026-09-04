@@ -137,6 +137,53 @@
   fill: var(--ak-text-light);
 }
 
+/* --- Footer Top CTA --- */
+.footerTopCta {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  padding: 40px 0;
+  margin-bottom: 60px;
+}
+.footerTopCtaContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footerTopCtaText h2 {
+  font-size: 24px;
+  color: white;
+  margin: 0 0 10px 0;
+}
+.footerTopCtaText p {
+  color: #a0a0a0;
+  margin: 0;
+  font-size: 16px;
+}
+.footerTopCtaButton {
+  background-color: var(--ak-red);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+.footerTopCtaButton:hover {
+  background-color: #8a1a1e;
+}
+@media (max-width: 768px) {
+  .footerTopCtaContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 /* --- Footer Bottom Section --- */
 .footerBottom {
   padding: 0 0 20px; /* Adjusted padding as border-top is now on container */
